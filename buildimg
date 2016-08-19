@@ -8,8 +8,14 @@ sudo /sbin/losetup -D
 sudo /sbin/losetup -f -P stapi.img
 sudo mkfs.fat /dev/loop0p1
 sudo mkfs.ext4 /dev/loop0p2
-sudo mkdir -f /mnt/dos
-sudo mkdir -f /mnt/linux
+sudo mkdir -p /mnt/dos
+sudo mkdir -p /mnt/linux
 sudo mount /dev/loop0p1 /mnt/dos
 sudo mount /dev/loop0p2 /mnt/linux
-
+sudo cp -r $ROOT_FS/boot/* /mnt/dos/
+sudo cp -r $ROOT_FS/* /mnt/linux/
+sudo umount /mnt/dos
+sudo umount /mnt/linux
+sudo /sbin/losetup -D
+ls -l stapi.img
+echo Done

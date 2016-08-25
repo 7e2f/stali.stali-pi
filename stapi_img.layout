@@ -1,7 +1,7 @@
 # partition table of stapi.img
 unit: sectors
 
-stapi.img1 : start=     8192, size=   131072, Id= c
-stapi.img2 : start=   139264, size=  2097152, Id=83
+stapi.img1 : start=     8192, size=   114688, Id= c, bootable
+stapi.img2 : start=   122880, size=  4071424, Id=83
 stapi.img3 : start=        0, size=        0, Id= 0
 stapi.img4 : start=        0, size=        0, Id= 0

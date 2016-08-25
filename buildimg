@@ -1,9 +1,9 @@
 #!/bin/sh
 PWD=`pwd`
-export ROOT_FS=$PWD/../rootfs-arm/
+export ROOT_FS=$PWD/../rootfs-pi/
 rm -f stapi.img
 dd if=/dev/zero bs=512 count=4194304 of=stapi.img
-/sbin/sfdisk stapi.img < stapi_img.layout
+/sbin/sfdisk -f stapi.img < stapi_img.layout
 sudo /sbin/losetup -D
 sudo /sbin/losetup -f -P stapi.img
 sudo mkfs.fat /dev/loop0p1
